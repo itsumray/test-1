@@ -117,6 +117,10 @@
     .social-icon:hover {
       transform: scale(1.1);
     }
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+    }
     .links-container {
       display: flex;
       flex-direction: column;
@@ -140,13 +144,19 @@
     .icon-box {
       width: 38px;
       height: 38px;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      color: #0f172a;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .icon-box svg {
+      width: 18px;
+      height: 18px;
     }
     .footer {
       margin-top: 32px;
@@ -157,9 +167,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="lang-switcher" id="langSwitcher">
-            <button class="lang-btn active" onclick="setLanguage('en')">EN</button><button class="lang-btn " onclick="setLanguage('ja')">JA</button>
-          </div>
+    
 
     <div class="profile-card">
       <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&auto=format&fit=crop&q=80" alt="" class="banner">
@@ -171,13 +179,13 @@
       
       <div class="socials-box">
               <a href="https://x.com/elenarostova" target="_blank" rel="noopener noreferrer" class="social-icon" title="X (Twitter)">
-                    <span style="font-size: 16px; font-weight: bold; color: #000;">🌐</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                   </a><a href="https://github.com/elenarostova" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
-                    <span style="font-size: 16px; font-weight: bold; color: #000;">🌐</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
                   </a><a href="https://instagram.com/elenarostova" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
-                    <span style="font-size: 16px; font-weight: bold; color: #000;">🌐</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   </a><a href="https://linkedin.com/in/elenarostova" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
-                    <span style="font-size: 16px; font-weight: bold; color: #000;">🌐</span>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                   </a>
             </div>
     </div>
@@ -192,9 +200,44 @@
   </div>
 
   <script>
-    const profileData = {"name":"Elena Rostova","username":"elenarostova","bio":"Design engineer & digital strategist. Building open-source tools & writing weekly about tech trends ✨","avatarUrl":"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80","bannerUrl":"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&auto=format&fit=crop&q=80","verified":true,"location":"San Francisco, CA","pronouns":"she/her","socials":[{"id":"1","platform":"twitter","url":"https://x.com/elenarostova"},{"id":"2","platform":"github","url":"https://github.com/elenarostova"},{"id":"3","platform":"instagram","url":"https://instagram.com/elenarostova"},{"id":"4","platform":"linkedin","url":"https://linkedin.com/in/elenarostova"}],"languages":{"enabledLanguages":["en","ja"],"defaultLanguage":"en"}};
+    const profileData = {"name":"Elena Rostova","username":"elenarostova","bio":"Design engineer & digital strategist. Building open-source tools & writing weekly about tech trends ✨","avatarUrl":"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80","bannerUrl":"https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&auto=format&fit=crop&q=80","verified":true,"location":"San Francisco, CA","pronouns":"she/her","socials":[{"id":"1","platform":"twitter","url":"https://x.com/elenarostova"},{"id":"2","platform":"github","url":"https://github.com/elenarostova"},{"id":"3","platform":"instagram","url":"https://instagram.com/elenarostova"},{"id":"4","platform":"linkedin","url":"https://linkedin.com/in/elenarostova"}]};
     const linksData = [{"id":"l1","title":"🚀 Launch Pad • My Latest Open Source Project","url":"https://github.com/elenarostova/launch-pad","description":"Next-gen web toolkit for rapid product prototyping. Free & open source.","clicks":342,"enabled":true,"highlight":true,"badgeText":"FEATURED"},{"id":"l2","title":"🎬 Subscribe on YouTube Channel","url":"https://youtube.com/@elenarostova","description":"Weekly tutorials on UI/UX engineering, Vite, React & AI workflows.","clicks":819,"enabled":true},{"id":"l3","title":"📰 The Weekly Pulse Substack Newsletter","url":"https://substack.com/@elenarostova","description":"Join 14,000+ tech leaders receiving my curation every Sunday morning.","clicks":512,"enabled":true,"badgeText":"NEW"},{"id":"l4","title":"🎧 Listen to My Tech Podcast on Spotify","url":"https://open.spotify.com/show/techpulse","description":"In-depth chats with top founders & lead developers.","clicks":289,"enabled":true},{"id":"l5","title":"☕ Support My Work on Buy Me a Coffee","url":"https://buymeacoffee.com/elenarostova","description":"Help fuel late-night coding sessions & tutorials.","clicks":145,"enabled":true}];
+    const svgMap = {"youtube":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17\"/><polygon points=\"10 15 15 12 10 9 10 15\"/></svg>","x":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"currentColor\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\"/></svg>","twitter":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"currentColor\"><path d=\"M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z\"/></svg>","github":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4\"/><path d=\"M9 18c-4.51 2-5-2-7-2\"/></svg>","instagram":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"20\" x=\"2\" y=\"2\" rx=\"5\" ry=\"5\"/><path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"/><line x1=\"17.5\" x2=\"17.51\" y1=\"6.5\" y2=\"6.5\"/></svg>","linkedin":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>","spotify":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/></svg>","tiktok":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M23 7q-3 0-6-3v11a6 6 0 1 1-6-6q1 0 2 0.5V2h5a8 8 0 0 0 5 5z\"/></svg>","twitch":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7\"/></svg>","discord":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/></svg>","substack":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 11a9 9 0 0 1 9 9\"/><path d=\"M4 4a16 16 0 0 1 16 16\"/><circle cx=\"5\" cy=\"19\" r=\"1\"/></svg>","medium":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z\"/><polyline points=\"14 2 14 8 20 8\"/></svg>","producthunt":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3z\"/></svg>","buymeacoffee":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 8h1a4 4 0 0 1 0 8h-1\"/><path d=\"M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z\"/><line x1=\"6\" x2=\"6\" y1=\"1\" y2=\"4\"/><line x1=\"10\" x2=\"10\" y1=\"1\" y2=\"4\"/><line x1=\"14\" x2=\"14\" y1=\"1\" y2=\"4\"/></svg>","etsy":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7\"/><path d=\"M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8\"/><path d=\"M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4\"/><path d=\"M2 7h20\"/></svg>","whatsapp":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7.9 20A9 9 0 1 0 4 16.1L2 22Z\"/></svg>","telegram":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m22 2-7 20-4-9-9-4Z\"/><path d=\"M22 2 11 13\"/></svg>","email":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/></svg>","phone":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/></svg>","website":"<svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><line x1=\"2\" x2=\"22\" y1=\"12\" y2=\"12\"/><path d=\"M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"/></svg>"};
+    const iconStyle = 'minimal-monochrome';
     let currentLang = 'en';
+
+    function detectKeyFromUrl(url) {
+      if (!url) return 'website';
+      const clean = url.trim().toLowerCase();
+      if (clean.includes('youtube.com') || clean.includes('youtu.be')) return 'youtube';
+      if (clean.includes('twitter.com') || clean.includes('x.com')) return 'x';
+      if (clean.includes('github.com')) return 'github';
+      if (clean.includes('instagram.com')) return 'instagram';
+      if (clean.includes('linkedin.com')) return 'linkedin';
+      if (clean.includes('spotify.com')) return 'spotify';
+      if (clean.includes('tiktok.com')) return 'tiktok';
+      if (clean.includes('twitch.tv')) return 'twitch';
+      if (clean.includes('discord.')) return 'discord';
+      if (clean.includes('substack.com')) return 'substack';
+      if (clean.includes('medium.com')) return 'medium';
+      if (clean.includes('producthunt.com')) return 'producthunt';
+      if (clean.includes('buymeacoffee.com')) return 'buymeacoffee';
+      if (clean.includes('etsy.com')) return 'etsy';
+      if (clean.includes('wa.me') || clean.includes('whatsapp.com')) return 'whatsapp';
+      if (clean.includes('t.me') || clean.includes('telegram.')) return 'telegram';
+      if (clean.startsWith('mailto:')) return 'email';
+      if (clean.startsWith('tel:')) return 'phone';
+      return 'website';
+    }
+
+    function getIconForUrl(url, thumbnail) {
+      if (thumbnail) {
+        return `<img src="${thumbnail}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;" alt="" />`;
+      }
+      const key = detectKeyFromUrl(url);
+      const svg = svgMap[key] || svgMap['website'];
+      return svg;
+    }
 
     function getTrans(transObj, fallback, lang) {
       if (transObj && transObj[lang] && transObj[lang].trim().length > 0) {
@@ -230,13 +273,13 @@
         const badgeHtml = badge ? `<span style="font-size: 10px; font-weight: 800; background: #fbbf24; color: #000; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase;">${badge}</span>` : '';
         const descHtml = desc ? `<p style="font-size: 12px; color: #94a3b8; margin-top: 4px; line-height: 1.4;">${desc}</p>` : '';
 
-        const thumbImg = link.thumbnail ? `<img src="${link.thumbnail}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;" />` : '🌐';
+        const iconHtml = getIconForUrl(link.url, link.thumbnail);
 
         return `
           <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="link-card">
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+            <div style="display: flex; items-center; justify-content: space-between; gap: 8px;">
               <div style="display: flex; align-items: center; gap: 12px;">
-                <div class="icon-box">${thumbImg}</div>
+                <div class="icon-box">${iconHtml}</div>
                 <div style="text-align: left;">
                   <h3 style="font-weight: 700; font-size: 15px; color: #ffffff; margin: 0;">${title}</h3>
                   ${descHtml}
